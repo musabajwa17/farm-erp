@@ -122,8 +122,8 @@ const EmpoweringFarmsCards = () => {
 
               {/* Content block */}
               <div
-                className={`absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white z-20 transition-all duration-500 ${
-                  hoveredIndex === index ? 'translate-y-[-10px]' : 'translate-y-0'
+                className={`absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white z-20 transition-all duration-1000 ${
+                  hoveredIndex === index ? 'translate-y-[-25px]' : 'translate-y-0'
                 }`}
               >
                 <h3 className="text-xl md:text-2xl font-bold mb-2 leading-tight">
