@@ -57,7 +57,7 @@ export default function Header() {
                       <a
                         key={option}
                         href="#"
-                        className={`block px-4 py-2 text-sm text-gray-800 hover:text-green-700 hover:underline ${
+                        className={`block px-4 py-2 text-sm text-gray-800 hover:text-green-700 hover:underline cursor-pointer ${
                           i !== item.dropdown.length - 1 ? "border-b" : ""
                         }`}
                         tabIndex={0}
@@ -71,7 +71,7 @@ export default function Header() {
             ) : (
               <a
                 href={item.link}
-                className="font-medium items-center text-sm hover:text-green-700 opacity-90"
+                className="font-medium items-center text-sm hover:text-green-700 opacity-90 cursor-pointer"
               >
                 {item.label}
               </a>

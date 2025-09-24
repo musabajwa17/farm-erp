@@ -6,6 +6,8 @@ import Working from "../components/work/Working";
 import AboutErp from "../components/AboutErp";
 import ContactUs from "../components/contact/ContactUs";
 import Footer from "../components/Footer";
+import EmpoweringFarmsCards from "../components/cards/EmpoweringFarmCards";
+
 export default function Home() {
   return (
     <div>
@@ -13,9 +15,10 @@ export default function Home() {
       <Header />
       <HeroSection />
       <Solutions />
+      <EmpoweringFarmsCards />
       <Working />
       <AboutErp />
-      <ContactUs />
+        <ContactUs />
       <Footer />
     </div>
   );

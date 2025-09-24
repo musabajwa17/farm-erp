@@ -69,7 +69,7 @@ export default function Working() {
           {listItems.map((item) => (
               <li key={item} className="flex items-center gap-2 cursor-pointer text-black transition-colors font-semibold ">
               <span className="flex items-center justify-center content-center w-7 h-7 rounded-full bg-[#6abe52] text-white font-bold">&gt;</span>
-             <span className="hover:underline opacity-60 hover:opacity-100 text-base"> {item}</span>
+             <span className="hover:underline opacity-60 hover:opacity-100 text-base cursor-pointer"> {item}</span>
             </li>
           ))}
         </ul>

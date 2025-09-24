@@ -28,12 +28,12 @@ export default function Footer() {
           <div className="flex flex-col items-center space-y-3">
             <a
               href="mailto:support@croperp.com"
-              className="hover:text-gray-300 text-xs text-[#19CE64]"
+              className="hover:text-gray-300 text-xs text-[#19CE64] cursor-pointer"
             >
               
             <span className="text-xs text-[#8b5e3c]">Email:</span>  support@croperp.com
             </a>
-            <a href="https://www.croperp.com" className="hover:text-gray-300 text-xs text-[#19CE64]">
+            <a href="https://www.croperp.com" className="hover:text-gray-300 text-xs text-[#19CE64] cursor-pointer">
             <span className="text-xs text-[#8b5e3c]">Website:</span>  www.croperp.com
             </a>
           </div>
@@ -54,16 +54,16 @@ export default function Footer() {
             </h3>
           </div>
           <ul className="list-disc list-inside space-y-1">
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Farm Management
             </li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Crop Planning
             </li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Harvest Tracking
             </li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Market Analysis
             </li>
           </ul>
@@ -75,23 +75,23 @@ export default function Footer() {
             Product Features
           </h3>
           <ul className="list-disc list-inside space-y-1">
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Real-time Monitoring
             </li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Analytics Dashboard
             </li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Automated Reports
             </li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">Mobile App</li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">Mobile App</li>
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Notifications
             </li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Multi-User Access
             </li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">
               Integration APIs
             </li>
           </ul>
@@ -103,20 +103,20 @@ export default function Footer() {
             Navigation
           </h3>
           <ul className="list-disc list-inside space-y-1">
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">Home</li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">About Us</li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">Services</li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">Blog</li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">Contact</li>
-            <li className="hover:text-gray-400 cursor-pointer opacity-60">FAQs</li>
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">Home</li>
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">About Us</li>
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">Services</li>
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">Blog</li>
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">Contact</li>
+            <li className="hover:text-gray-300 cursor-pointer opacity-60">FAQs</li>
           </ul>
         </div>
       </div>
 
       {/* Copyright */}
       <div className="bg-[#1A202C] py-4 mt-8 flex flex-col md:flex-row justify-center md:justify-around items-center gap-2">
-        <span className="text-center text-white text-sm font-bold opacity-60">&copy; {new Date().getFullYear()} © Copyright 2024. Earth-Scan-systems All Rights Reserved</span>
-        <span className="text-center text-white text-sm font-bold opacity-60">Designed by CropERP</span>
+        <span className="text-center text-white text-sm font-medium opacity-60">&copy; {new Date().getFullYear()} © Copyright 2024. Earth-Scan-systems All Rights Reserved</span>
+        <span className="text-center text-white text-sm font-medium opacity-60">Designed by CropERP</span>
       </div>
     </footer>
   );
