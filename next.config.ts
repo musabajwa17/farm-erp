@@ -1,22 +1,23 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+import type { NextConfig } from "next";
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true", // run only when needed
 });
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = bundleAnalyzer({
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    formats: ['image/avif', 'image/webp'],
-    domains: ['images.pexels.com', 'images.unsplash.com'],
-    unoptimized: process.env.EXPORT === 'true', // fix static export builds
+    formats: ["image/avif", "image/webp"],
+    domains: ["images.pexels.com", "images.unsplash.com"],
+    unoptimized: process.env.EXPORT === "true", // needed for `next export`
   },
   experimental: {
     optimizeCss: true,
   },
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    removeConsole: process.env.NODE_ENV === "production",
   },
-};
+});
 
-module.exports = withBundleAnalyzer(nextConfig);
+export default nextConfig;
