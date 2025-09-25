@@ -7,7 +7,7 @@ import AboutErp from "../components/AboutErp";
 import ContactUs from "../components/contact/ContactUs";
 import Footer from "../components/Footer";
 import EmpoweringFarmsCards from "../components/cards/EmpoweringFarmCards";
-
+import Partners from "../components/Partners";
 export default function Home() {
   return (
     <div>
@@ -15,6 +15,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <Solutions />
+      <Partners />
       <EmpoweringFarmsCards />
       <Working />
       <AboutErp />

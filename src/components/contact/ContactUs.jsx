@@ -24,7 +24,7 @@ export default function ContactUs() {
             </p>
             <img src="/crop7.jpg" alt="Contact Us" className="w-130 h-75 mt-5 rounded-lg shadow-md object-cover" />
           </div>
-          <div className="mt-4 flex flex-col items-center md:flex justify-between space-y-3 w-[93%]">
+          <div className="mt-4 flex flex-col items-center md:flex md:justify-between md:flex-row space-y-3 w-[93%]">
             <div className="flex items-center space-x-3">
               <span className="font-semibold opacity-80"><Mail w={4} h={4} /></span>
               <a href="mailto:support@croperp.com" className="opacity-80 underline text-sm">
@@ -37,7 +37,7 @@ export default function ContactUs() {
                 051 543 1234
               </a>
             </div>
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 mb-3">
               <span className="font-semibold opacity-80"><MessageCircle w={4} h={4} /></span>
               <a href="#" className="opacity-80 underline text-sm mt-[1.5px]">
                 Start Chat
