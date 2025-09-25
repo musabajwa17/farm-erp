@@ -6,8 +6,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
-    domains: ["images.pexels.com", "images.unsplash.com"],
-    unoptimized: process.env.EXPORT === "true",
+    domains: ["images.pexels.com", "images.unsplash.com", 'upload.wikimedia.org'],
+    unoptimized: process.env.EXPORT === "true"
   },
   experimental: {
     optimizeCss: true,
