@@ -39,7 +39,7 @@ const Partners = () => {
           {partners.map((partner) => (
             <div key={partner.name} className="flex items-center justify-center p-2">
               <div className="relative w-32 h-16 md:w-40 md:h-20">
-                <img
+                <Image
                   src={partner.logo}
                   alt={partner.alt}
                   fill
