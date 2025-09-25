@@ -190,8 +190,7 @@ const FarmSolutions = () => {
                           : 'text-[#787d7d] hover:bg-gray-100'
                       }`}
                     >
-                      {/* <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-green-500" /> */}
-                      <div className="text-sm sm:text-lg font-semibold leading-tight">
+                       <div className="text-sm sm:text-lg font-semibold leading-tight">
                         {tab.title.split('\n').map((line, i) => (
                           <div key={i}>{line}</div>
                         ))}
@@ -205,10 +204,8 @@ const FarmSolutions = () => {
         </nav>
       </div>
 
-      {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-          {/* Left Content - Dropdowns */}
           <div className="order-1">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 leading-tight text-gray-800 text-center lg:text-left">
               {currentContent.title}
@@ -217,7 +214,6 @@ const FarmSolutions = () => {
               {currentContent.description}
             </p>
             
-            {/* Dropdown Feature List */}
             <div className="space-y-2">
               {currentContent.features.map((feature, index) => {
                 const IconComponent = feature.icon
@@ -257,8 +253,6 @@ const FarmSolutions = () => {
               })}
             </div>
           </div>
-          
-          {/* Right Content - Image */}
           <div className="flex justify-center items-start order-2">
             <div className="relative w-full">
               <Image

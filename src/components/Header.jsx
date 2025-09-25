@@ -1,84 +1,177 @@
 "use client";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-
-const menu = [
-  { label: "Home", link: "/" },
-  {
-    label: "Solution",
-    dropdown: ["Overview", "Features", "Pricing"],
-  },
-  {
-    label: "Land Preparing & Crop Planning",
-    dropdown: ["Soil Analysis", "Planning Tools"],
-  },
-  {
-    label: "Crop Operations",
-    dropdown: ["Sowing", "Irrigation", "Fertilization"],
-  },
-  {
-    label: "Post Harvest",
-    dropdown: ["Storage", "Processing", "Logistics"],
-  },
-  {
-    label: "Farm Ai & Cms",
-    dropdown: ["Analytics", "Predictions"],
-  },
-];
+import { Menu, X, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [open, setOpen] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeMobile, setActiveMobile] = useState(null);
+
+  const menu = [
+    { label: "Home", link: "/" },
+    {
+      label: "Solution",
+      dropdown: ["Overview", "Features", "Pricing"],
+    },
+    {
+      label: "Land Preparing & Crop Planning",
+      dropdown: ["Soil Analysis", "Planning Tools"],
+    },
+    {
+      label: "Crop Operations",
+      dropdown: ["Sowing", "Irrigation", "Fertilization"],
+    },
+    {
+      label: "Post Harvest",
+      dropdown: ["Storage", "Processing", "Logistics"],
+    },
+    {
+      label: "Farm Ai & Cms",
+      dropdown: ["Analytics", "Predictions"],
+    },
+  ];
+
   return (
-    <header className="flex items-center bg-[#f7f7f7] px-35 py-3 gap-5 sticky top-0 z-50">
-      {/* <img src="/file.svg" alt="Logo" className="h-10 w-35 mr-6" /> */}
-      <img src="/logo.jpg" alt="Logo" className="h-10 w-40 mr-6" />
-      <nav className="flex gap-10">
-        {menu.map((item, idx) => (
-          <div key={item.label} className="relative gap-5 flex items-center">
-            {item.dropdown ? (
-              <div
-                className="flex items-center gap-2 font-medium font-medium text-sm hover:text-green-700 focus:outline-none cursor-pointer"
-                onMouseEnter={() => setOpen(idx)}
-                onMouseLeave={() => setOpen(null)}
-                tabIndex={0}
-                onFocus={() => setOpen(idx)}
-                onBlur={() => setOpen(null)}
-              >
-                <span className="opacity-90 text-sm">{item.label}</span>
-                <ChevronDown size={18} />
-                {open === idx && (
-                  <div
-                    className="absolute left-0 top-full w-48 bg-white z-10 rounded-b-2xl border-b-2 border-gray-200"
-                    onMouseEnter={() => setOpen(idx)}
-                    onMouseLeave={() => setOpen(null)}
-                    style={{ pointerEvents: "auto", background: "#fff" }}
-                  >
-                    {item.dropdown.map((option, i) => (
-                      <a
-                        key={option}
-                        href="#"
-                        className={`block px-4 py-2 text-sm text-gray-800 hover:text-green-700 hover:underline cursor-pointer ${
-                          i !== item.dropdown.length - 1 ? "border-b" : ""
-                        }`}
-                        tabIndex={0}
+    <header className="bg-[#f7f7f7] sticky top-0 z-50 shadow">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 py-3">
+        <img
+          src="/logo.jpg"
+          alt="Logo"
+          className="h-10 w-auto object-contain"
+        />
+        <nav className="hidden md:flex gap-8">
+          {menu.map((item, idx) => (
+            <div key={idx} className="relative content-center">
+              {item.dropdown ? (
+                <div
+                  className="flex items-center gap-1 text-sm font-medium cursor-pointer hover:text-green-700"
+                  onMouseEnter={() => setOpen(idx)}
+                  onMouseLeave={() => setOpen(null)}
+                >
+                  <span>{item.label}</span>
+                  <ChevronDown size={16} />
+
+                  <AnimatePresence>
+                    {open === idx && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute left-0 top-full mt-2 min-w-[12rem] bg-white rounded-lg shadow-lg border"
                       >
-                        {option}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <a
-                href={item.link}
-                className="font-medium items-center text-sm hover:text-green-700 opacity-90 cursor-pointer"
-              >
-                {item.label}
-              </a>
-            )}
-          </div>
-        ))}
-      </nav>
+                        {/* {item.dropdown.map((option, i) => (
+                          <a
+                            key={i}
+                            href="#"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            {option}
+                          </a>
+                        ))} */}
+                         {item.dropdown.map((option, i) => (
+                       <a
+                         key={option}
+                         href="#"
+                         className={`block px-4 py-2 text-sm text-gray-800 hover:text-green-700 hover:underline cursor-pointer ${
+                           i !== item.dropdown.length - 1 ? "border-b" : ""
+                         }`}
+                         tabIndex={0}
+                       >
+                         {option}
+                       </a>
+                     ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <a
+                  href={item.link}
+                  className="text-sm font-medium hover:text-green-700"
+                >
+                  {item.label}
+                </a>
+              )}
+            </div>
+          ))}
+        </nav>
+        <button
+          className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white border-t shadow-md overflow-hidden"
+          >
+            <nav className="flex flex-col p-4 space-y-2">
+              {menu.map((item, idx) => (
+                <div key={idx}>
+                  {item.dropdown ? (
+                    <div>
+                      <button
+                        className="flex justify-between items-center w-full py-2 text-sm font-medium hover:text-green-700"
+                        onClick={() =>
+                          setActiveMobile(activeMobile === idx ? null : idx)
+                        }
+                      >
+                        {item.label}
+                        <motion.div
+                          animate={{
+                            rotate: activeMobile === idx ? 180 : 0,
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ChevronDown size={16} />
+                        </motion.div>
+                      </button>
+
+                      <AnimatePresence>
+                        {activeMobile === idx && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="pl-4 flex flex-col space-y-1"
+                          >
+                            {item.dropdown.map((option, i) => (
+                              <a
+                                key={i}
+                                href="#"
+                                className="block py-1 text-sm text-gray-700 hover:text-green-700"
+                              >
+                                {option}
+                              </a>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <a
+                      href={item.link}
+                      className="block text-sm font-medium hover:text-green-700"
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

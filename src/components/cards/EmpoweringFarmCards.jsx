@@ -39,7 +39,6 @@ const EmpoweringFarmsCards = () => {
     },
   ];
 
-  // Handle mouse wheel scroll for horizontal scrolling
   const handleWheel = (e) => {
     if (scrollContainerRef.current && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
       e.preventDefault();
@@ -47,7 +46,6 @@ const EmpoweringFarmsCards = () => {
     }
   };
 
-  // Handle touch scroll for mobile
   const handleTouchStart = (e) => {
     const touch = e.touches[0];
     if (scrollContainerRef.current) {
@@ -77,7 +75,7 @@ const EmpoweringFarmsCards = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 my-10 flex flex-col justify-center">
-      {/* Header Section */}
+
       <div className="text-center my-8">
         <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
           Agricultural Solutions
@@ -87,7 +85,7 @@ const EmpoweringFarmsCards = () => {
         </p>
       </div>
 
-      {/* Farm Cards Container */}
+
       <div
         className="mt-4"
         ref={scrollContainerRef}
@@ -100,11 +98,10 @@ const EmpoweringFarmsCards = () => {
           {farmData.map((farm, index) => (
             <div
               key={farm.id}
-                className="group relative w-64 md:w-full h-80 md:h-150 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer flex-shrink-0"
+                className="group relative w-full h-80 md:h-150 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer flex-shrink-0"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* Background Image */}
               <Image
                 src={farm.image}
                 alt={farm.title}
@@ -116,11 +113,7 @@ const EmpoweringFarmsCards = () => {
 }`}
 
               />
-
-              {/* Bottom Shadow Overlay */}
               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
-
-              {/* Content block */}
               <div
                 className={`absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white z-20 transition-all duration-1000 ${
                   hoveredIndex === index ? 'translate-y-[-25px]' : 'translate-y-0'
@@ -132,8 +125,6 @@ const EmpoweringFarmsCards = () => {
                 <p className="text-sm leading-relaxed mb-4">
                   {farm.description}
                 </p>
-
-                {/* Read More button - only on hover */}
                 <button
                   className={`inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm hover:bg-white/30 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-500 border border-white/30 cursor-pointer ${
                     hoveredIndex === index

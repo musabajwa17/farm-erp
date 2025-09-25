@@ -7,13 +7,11 @@ export default function AboutErp() {
   const [playAnimation, setPlayAnimation] = useState(false);
 
   useEffect(() => {
-    // Run animation only once when the component mounts
     setPlayAnimation(true);
   }, []);
 
   return (
   <div className="w-full min-h-screen bg-gradient-to-r from-[#20544d] to-[#2b887b] flex flex-col items-center text-white px-4 sm:px-6 py-10 sm:py-20">
-      {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: -50 }}
         animate={playAnimation ? { opacity: 1, y: 0 } : {}}
@@ -29,8 +27,6 @@ export default function AboutErp() {
         transition={{ duration: 0.6, delay: 0.5 }}
         className="w-24 sm:w-48 md:w-80 h-1 bg-white mt-6 sm:mt-10 mb-4 origin-left"
       ></motion.div>
-
-      {/* Paragraph */}
       <motion.p
         initial={{ opacity: 0, y: 40 }}
         animate={playAnimation ? { opacity: 1, y: 0 } : {}}
@@ -43,7 +39,6 @@ export default function AboutErp() {
         market doorstep.
       </motion.p>
 
-      {/* Cards Grid */}
       <AboutCards playAnimation={playAnimation} />
     </div>
   );

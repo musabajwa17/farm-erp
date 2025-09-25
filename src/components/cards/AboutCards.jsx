@@ -11,14 +11,13 @@ const cards = [
   { id: 6, img: "/crop6.jpg", title: "FarmLink CMS & Farm.Ai", desc: "User Managements", desc1: "Farm Insights and Stats", desc2: "Contract Farming (Beta)" },
 ];
 
-// Animation presets for each card
 const animations = [
-  { initial: { x: -150, opacity: 0 }, animate: { x: 0, opacity: 1 } }, // left
-  { initial: { y: -150, opacity: 0 }, animate: { y: 0, opacity: 1 } }, // top
-  { initial: { x: 150, opacity: 0 }, animate: { x: 0, opacity: 1 } }, // right
-  { initial: { x: -150, opacity: 0 }, animate: { x: 0, opacity: 1 } }, // left bottom
-  { initial: { y: 150, opacity: 0 }, animate: { y: 0, opacity: 1 } }, // bottom
-  { initial: { x: 150, opacity: 0 }, animate: { x: 0, opacity: 1 } }, // right bottom
+  { initial: { x: -150, opacity: 0 }, animate: { x: 0, opacity: 1 } },
+  { initial: { y: -150, opacity: 0 }, animate: { y: 0, opacity: 1 } },
+  { initial: { x: 150, opacity: 0 }, animate: { x: 0, opacity: 1 } },
+  { initial: { x: -150, opacity: 0 }, animate: { x: 0, opacity: 1 } },
+  { initial: { y: 150, opacity: 0 }, animate: { y: 0, opacity: 1 } },
+  { initial: { x: 150, opacity: 0 }, animate: { x: 0, opacity: 1 } },
 ];
 
 export default function AboutCards({ playAnimation }) {
@@ -44,8 +43,6 @@ export default function AboutCards({ playAnimation }) {
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Title + Description */}
             <h3 className="mt-3 sm:mt-4 text-base sm:text-lg font-semibold text-center">
               {card.title}
             </h3>
@@ -58,18 +55,6 @@ export default function AboutCards({ playAnimation }) {
             <p className="text-gray-600 text-xs sm:text-sm text-center mt-2">
               {card.desc2}
             </p>
-
-            {/* Rating */}
-            {/* <div className="flex items-center space-x-2 mt-3">
-              <div className="flex space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-500 text-lg">
-                    ★
-                  </span>
-                ))}
-              </div>
-              <span className="text-yellow-500 text-sm">(5)</span>
-            </div> */}
           </motion.div>
         ))}
       </div>
