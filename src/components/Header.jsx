@@ -12,23 +12,27 @@ export default function Header() {
     { label: "Home", link: "/" },
     {
       label: "Solution",
-      dropdown: ["Overview", "Features", "Pricing"],
+      dropdown: [
+        { label: "ESS Official", link: "https://escan-systems.com/our-services/" },
+        { label: "ESS Green Bot" },
+        { label: "ESS Farming Link" },
+      ],
     },
     {
       label: "Land Preparing & Crop Planning",
-      dropdown: ["Soil Analysis", "Planning Tools"],
+      dropdown: ["Farm Mapping (GIS)", "Soil Management"],
     },
     {
       label: "Crop Operations",
-      dropdown: ["Sowing", "Irrigation", "Fertilization"],
+      dropdown: ["Crop Sowing", "Irrigation Management", "Weather Forecasting","Inventory Management","Labor Management"],
     },
     {
       label: "Post Harvest",
-      dropdown: ["Storage", "Processing", "Logistics"],
+      dropdown: ["Farm Shipping", "Packaging", "Warehouse Management"],
     },
     {
       label: "Farm Ai & Cms",
-      dropdown: ["Analytics", "Predictions"],
+      dropdown: ["Farm Insights", "Contract Farming","Farm.Ai","Settings","Notifications"],
     },
   ];
 
@@ -49,7 +53,7 @@ export default function Header() {
                   onMouseEnter={() => setOpen(idx)}
                   onMouseLeave={() => setOpen(null)}
                 >
-                  <span>{item.label}</span>
+                  <span className="opacity-80">{item.label}</span>
                   <ChevronDown size={16} />
 
                   <AnimatePresence>
@@ -72,14 +76,16 @@ export default function Header() {
                         ))} */}
                          {item.dropdown.map((option, i) => (
                        <a
-                         key={option}
-                         href="#"
-                         className={`block px-4 py-2 text-sm text-gray-800 hover:text-green-700 hover:underline cursor-pointer ${
+                         key={option.label || option}
+                         href={option.link || "#"}
+                         className={`block px-4 py-2 text-xs text-gray-800 hover:text-green-700 hover:underline cursor-pointer ${
                            i !== item.dropdown.length - 1 ? "border-b" : ""
                          }`}
                          tabIndex={0}
+                         target={option.link ? "_blank" : undefined}
+                         rel={option.link ? "noopener noreferrer" : undefined}
                        >
-                         {option}
+                         {option.label || option}
                        </a>
                      ))}
                       </motion.div>
@@ -89,7 +95,7 @@ export default function Header() {
               ) : (
                 <a
                   href={item.link}
-                  className="text-sm font-medium hover:text-green-700"
+                  className="text-sm font-medium hover:text-green-700 opacity-80"
                 >
                   {item.label}
                 </a>
@@ -147,11 +153,13 @@ export default function Header() {
                           >
                             {item.dropdown.map((option, i) => (
                               <a
-                                key={i}
-                                href="#"
+                                key={option.label || option}
+                                href={option.link || "#"}
                                 className="block py-1 text-sm text-gray-700 hover:text-green-700"
+                                target={option.link ? "_blank" : undefined}
+                                rel={option.link ? "noopener noreferrer" : undefined}
                               >
-                                {option}
+                                {option.label || option}
                               </a>
                             ))}
                           </motion.div>
