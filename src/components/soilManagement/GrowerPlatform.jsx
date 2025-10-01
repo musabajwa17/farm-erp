@@ -4,7 +4,7 @@ import { Sprout, TrendingUp, FileCheck } from 'lucide-react';
 
 export default function GrowerPlatform() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-black">
+    <div className="relative w-full min-h-screen overflow-hidden bg-black my-5">
       {/* Background Video */}
       <video
         autoPlay
