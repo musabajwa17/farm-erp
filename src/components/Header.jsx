@@ -20,7 +20,10 @@ export default function Header() {
     },
     {
       label: "Land Preparing & Crop Planning",
-      dropdown: ["Farm Mapping (GIS)", "Soil Management"],
+      dropdown: [
+        { label: "Farm Mapping (GIS)" },
+        { label: "Soil Management", link: "/soilManagement" },
+      ],
     },
     {
       label: "Crop Operations",
@@ -82,8 +85,7 @@ export default function Header() {
                            i !== item.dropdown.length - 1 ? "border-b" : ""
                          }`}
                          tabIndex={0}
-                         target={option.link ? "_blank" : undefined}
-                         rel={option.link ? "noopener noreferrer" : undefined}
+                         // open in same tab, so no target or rel
                        >
                          {option.label || option}
                        </a>
