@@ -27,7 +27,13 @@ export default function Header() {
     },
     {
       label: "Crop Operations",
-      dropdown: ["Crop Sowing", "Irrigation Management", "Weather Forecasting","Inventory Management","Labor Management"],
+      dropdown: [
+        { label: "Crop Sowing", link: "/cropSowing" },
+        "Irrigation Management",
+        "Weather Forecasting",
+        "Inventory Management",
+        "Labor Management"
+      ],
     },
     {
       label: "Post Harvest",

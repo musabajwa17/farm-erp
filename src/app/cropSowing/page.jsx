@@ -6,18 +6,22 @@ import GrowerPlatform from "@/components/soilManagement/GrowerPlatform";
 import Benefit from "@/components/soilManagement/Benefit";
 import FAQComponent from "@/components/soilManagement/FAQComponent";
 import AgriERPFeatures from "@/components/soilManagement/ErpFeatures";
-const soilManagement = () => {
+import CropPlanning from "@/components/cropSowing/CropPlanning";
+import Planning from "../../components/cropSowing/Planning";
+const cropSowing = () => {
   return (
     <>
       <Header />
-      <GrowerPlatform />
-      <Partners />
+      <CropPlanning />
+      <Planning />
+      {/* <GrowerPlatform /> */}
+      {/* <Partners />
       <AgriERPFeatures />
       <Benefit />
-      <FAQComponent />
+      <FAQComponent /> */}
       <ContactUs />
       <Footer />
     </>
   );
 };
-export default soilManagement;
+export default cropSowing;
