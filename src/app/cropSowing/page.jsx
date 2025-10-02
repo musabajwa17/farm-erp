@@ -8,15 +8,17 @@ import FAQComponent from "@/components/soilManagement/FAQComponent";
 import AgriERPFeatures from "@/components/soilManagement/ErpFeatures";
 import CropPlanning from "@/components/cropSowing/CropPlanning";
 import Planning from "../../components/cropSowing/Planning";
+import HeaderContext from "@/components/contact/HeaderContext";
 const cropSowing = () => {
   return (
     <>
+      <HeaderContext />
       <Header />
       <CropPlanning />
       <Planning />
       {/* <GrowerPlatform /> */}
-      {/* <Partners />
-      <AgriERPFeatures />
+      <Partners />
+    {/*   <AgriERPFeatures />
       <Benefit />
       <FAQComponent /> */}
       <ContactUs />

@@ -1,5 +1,9 @@
+'use client';
 import { Mail, MapPin, Linkedin, Globe, ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 export default function HeaderContext() {
+  const router = useRouter();
   return (
     <header className="flex flex-col sm:flex-row items-center justify-between bg-[#183c36] py-3 px-4 sm:px-10 md:px-20 lg:px-32 shadow gap-3 sm:gap-0">
       <div className="flex flex-row items-center justify-around gap-2 sm:gap-10 w-full sm:w-auto">
@@ -32,6 +36,14 @@ export default function HeaderContext() {
           <button className="cursor-pointer bg-[#183c36] text-white px-3 sm:px-5 py-2 border-2 font-semibold shadow transition-all duration-200 flex items-center gap-2 hover:underline hover:scale-105 text-sm sm:text-base w-full sm:w-auto">
             Get a Quote
             <ArrowRight size={20} />
+          </button>
+        </div>
+        <div>
+          <button
+            className="cursor-pointer bg-[#183c36] text-white px-3 sm:px-5 py-2 border-2 font-semibold shadow transition-all duration-200 flex items-center gap-2 hover:underline hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
+            onClick={() => router.push('/Login')}
+          >
+            Login
           </button>
         </div>
       </div>

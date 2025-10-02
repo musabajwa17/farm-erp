@@ -6,9 +6,11 @@ import GrowerPlatform from "@/components/soilManagement/GrowerPlatform";
 import Benefit from "@/components/soilManagement/Benefit";
 import FAQComponent from "@/components/soilManagement/FAQComponent";
 import AgriERPFeatures from "@/components/soilManagement/ErpFeatures";
+import HeaderContext from "@/components/contact/HeaderContext";
 const soilManagement = () => {
   return (
     <>
+      <HeaderContext />
       <Header />
       <GrowerPlatform />
       <Partners />
