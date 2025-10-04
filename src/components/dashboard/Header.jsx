@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const DashboardHeader = () => {
+const Header = () => {
   return (
 <nav class="border-gray-200 bg-[#f7f7f7]">
   <div class=" flex flex-wrap items-center justify-between p-4">
@@ -24,4 +24,4 @@ const DashboardHeader = () => {
 
   );
 }
-export default DashboardHeader;
+export default Header;

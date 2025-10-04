@@ -1,8 +1,8 @@
-import DashboardHeader from "../../components/dashboard/DashboardHeader";
+import Header from '../../components/dashboard/Header';
 
 const dashboard = () => {
   return <>
-    <DashboardHeader />
+    <Header />
   </>;
 }
 export default dashboard;
