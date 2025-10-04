@@ -39,9 +39,9 @@ export default function HeaderContext() {
           </button>
         </div>
         <div>
-          <button
-            className="cursor-pointer bg-[#183c36] text-white px-3 sm:px-5 py-2 border-2 font-semibold shadow transition-all duration-200 flex items-center gap-2 hover:underline hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
-            onClick={() => router.push('/Login')}
+            <button
+              className="cursor-pointer bg-[#183c36] text-white px-3 sm:px-5 py-2 border-2 font-semibold shadow transition-all duration-200 flex items-center gap-2 hover:underline hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
+              onClick={() => router.push('/Login')}
           >
             Login
           </button>

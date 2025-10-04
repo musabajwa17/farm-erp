@@ -9,33 +9,33 @@ const EmpoweringFarmsCards = () => {
   const farmData = [
     {
       id: 1,
-      title: "Row Crop Farms",
-      description: "Streamline your row crop farm management with AgriERP's advanced features for real-time inventory tracking and resource optimization.",
-      image: "https://images.pexels.com/photos/95215/pexels-photo-95215.jpeg",
+      title: "Pre-Season",
+      description: "Pre-season is where farming success begins. Farmers prepare their land, analyze soil health, plan crops, and secure contracts.",
+      image: "https://images.pexels.com/photos/1615785/pexels-photo-1615785.jpeg",
     },
     {
       id: 2,
-      title: "Almond Farms",
-      description: "AgriERP empowers almond farmers with specialized farm management solution to track and optimize every aspect of their orchard operations efficiently.",
-      image: "https://images.pexels.com/photos/2317717/pexels-photo-2317717.jpeg",
+      title: "In-Season",
+      description: "In-season is the heartbeat of farming, where daily operations define crop outcomes. From irrigation and labor management to pest control and weather alerts, efficiency is critical.",
+      image: "https://images.pexels.com/photos/3876417/pexels-photo-3876417.jpeg",
     },
     {
       id: 3,
-      title: "Vegetable Farms",
-      description: "AgriERP enhances vegetable farming efficiency with smart inventory management tools for better crop and supply chain oversight.",
-      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      title: "Harvest",
+      description: "With CROP ERP, farmers optimize machinery, labor, and logistics while maintaining full transparency. Every crop is harvested at peak value.",
+      image: "https://images.pexels.com/photos/5231144/pexels-photo-5231144.jpeg",
     },
     {
       id: 4,
-      title: "Indoor Vertical Farms",
-      description: "Unlock precision farming in your vertical spaces with AgriERP's tailored solutions for managing diverse crop varieties.",
-      image: "https://images.pexels.com/photos/2316571/pexels-photo-2316571.jpeg",
+      title: "Post-Harvest",
+      description: "Post-harvest is where value is unlocked beyond the farm. Proper storage, cold-chain management, and logistics ensure crop quality reaches the market intact.",
+      image: "https://images.pexels.com/photos/34082490/pexels-photo-34082490.jpeg",
     },
     {
       id: 5,
-      title: "Nut and Citrus Farms",
-      description: "Maximize yield for nut and citrus orchards with AgriERP's robust management systems for inventory control and operational efficiency.",
-      image: "https://images.pexels.com/photos/3876417/pexels-photo-3876417.jpeg",
+      title: "GreenBot.Ai",
+      description: "With GreenBot.ai, farmers gain confidence in decision-making, minimize crop losses, and maximize value every step of the lifecycle.",
+      image: "https://images.pexels.com/photos/8566524/pexels-photo-8566524.jpeg",
     },
   ];
 

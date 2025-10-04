@@ -16,14 +16,13 @@ export default function GrowerPlatform() {
           {/* Left Side - Text Content */}
           <div className="text-white space-y-6 lg:space-y-8 w-full lg:w-2/3">
             <h1 className="text-3xl sm:text-4xl font-semibold leading-tight">
-              A Unified Platform to Streamline Grower Management Process
+              Smart Farming Modules
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
-              Simplify contract management and maximize profitability with
-              AgriERP's powerful Grower Management software.
+              Access powerful tools for crop sowing, irrigation, weather forecasting, and labor management — all designed to optimize resources, reduce risks, and improve productivity across every stage of farming.
             </p>
             <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-              Talk to Our Agent
+              Login to Access Modules
             </button>
           </div>
 

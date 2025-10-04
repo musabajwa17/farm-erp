@@ -38,8 +38,8 @@ const FarmSolutions = () => {
 
   const tabContent = {
     0: {
-      title: "Farm Operations Management",
-      description: "Manage everything job planning, scheduling and work order management.",
+      title: "Planning & Preparation",
+      description: "Manage everything planning, scheduling and work order management.",
       image: "https://images.pexels.com/photos/2889442/pexels-photo-2889442.jpeg",
       features: [
         { icon: Settings, text: "Resource Management" },
@@ -49,8 +49,8 @@ const FarmSolutions = () => {
       ]
     },
     1: {
-      title: "Farm Financial Management",
-      description: "Complete financial oversight with budgeting, expense tracking and profit analysis",
+      title: "Operations & Monitoring",
+      description: "Farmers must balance irrigation, labor, inventory, pest control, and weather risks with precision",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       features: [
         { icon: CreditCard, text: "Budget Planning" },
@@ -60,8 +60,8 @@ const FarmSolutions = () => {
       ]
     },
     2: {
-      title: "Crop Management Software",
-      description: "Advanced crop planning, monitoring, and yield optimization.",
+      title: "Inventary Management",
+      description: "Purchases and usage are directly linked to crop operations, ensuring zero wastage and complete traceability.",
       image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       features: [
         { icon: Sprout, text: "Crop Planning" },
@@ -71,8 +71,8 @@ const FarmSolutions = () => {
       ]
     },
     3: {
-      title: "Farm Inventory Management",
-      description: "Track seeds, fertilizers and equipment with automated inventory control and alerts.",
+      title: "Weather Forecasting",
+      description: "Accurate weather insights are critical for protecting crops and planning operations.",
       image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       features: [
         { icon: Sprout, text: "Seed Tracking" },
@@ -82,8 +82,8 @@ const FarmSolutions = () => {
       ]
     },
     4: {
-      title: "Sales and Contracting",
-      description: "Streamline sales processes, contract management, and customer relationships",
+      title: "Contract Farming & Agreements",
+      description: "Contract farming connects growers with buyers under clear terms of price, quantity, and quality.",
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       features: [
         { icon: Briefcase, text: "Sales Pipeline" },
@@ -93,7 +93,7 @@ const FarmSolutions = () => {
       ]
     },
     5: {
-      title: "Farm Shipping & Packing Management",
+      title: "Shipping & Packing Management",
       description: "Efficient logistics, packaging, and distribution management for your agricultural products.",
       image: "https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       features: [
@@ -106,12 +106,12 @@ const FarmSolutions = () => {
   }
 
   const tabs = [
-    { icon: Tractor, title: "Farm\nOperations\nManagement" },
-    { icon: DollarSign, title: "Farm\nFinancial\nManagement" },
-    { icon: Wheat, title: "Crop\nManagement\nSoftware" },
-    { icon: Package, title: "Farm\nInventory\nManagement" },
+    { icon: Tractor, title: "Planning\nAnd\nPreparation" },
+    { icon: DollarSign, title: "Operations\nAnd\nMonitering" },
+    { icon: Wheat, title: "Inventary\nManagement" },
+    { icon: Package, title: "Weather\nForecasting" },
     { icon: Handshake, title: "Sales and\nContracting" },
-    { icon: Truck, title: "Farm Shipping &\nPacking\nManagement" }
+    { icon: Truck, title: "Shipping &\nPacking\nManagement" }
   ]
 
   const currentContent = tabContent[activeTab]
@@ -207,7 +207,7 @@ const FarmSolutions = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           <div className="order-1">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 leading-tight text-gray-800 text-center lg:text-left">
+            <h1 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 leading-tight text-gray-800 text-center lg:text-left">
               {currentContent.title}
             </h1>
             <p className="text-sm sm:text-lg leading-relaxed mb-8 sm:mb-12 text-gray-600 text-center lg:text-left">

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   User,
   Lock,
@@ -11,19 +12,39 @@ import {
 import Image from "next/image";
 
 export default function Form() {
-  const [username, setUsername] = useState("");
+  const router = useRouter();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
+    const validateEmail = (value) => {
+    // simple but effective email regex
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!username.trim()) newErrors.username = "Username is required";
+  if (!email.trim()) newErrors.email = "Email is required";
+  else if (!validateEmail(email)) newErrors.email = "Please enter a valid email (example@gmail.com)";
+
     if (!password.trim()) newErrors.password = "Password is required";
-    setErrors(newErrors);
-    setSubmitted(true);
+    else if (password.length < 8) newErrors.password = "Password must be at least 8 characters";
+
+  setErrors(newErrors);
+  setSubmitted(true);
+
+    // stop submission if any errors
+    if (Object.keys(newErrors).length > 0) return;
+
+    // proceed with login (placeholder)
+    // TODO: call API or perform auth
+    console.log("Submitting", { email, password });
+
+    // On successful validation navigate to dashboard
+    router.push("/dashboard");
   };
 
   return (
@@ -69,45 +90,48 @@ export default function Form() {
               <div>
                 <div
                   className={`flex items-center gap-3 border-2 bg-white px-4 py-3 rounded-xl shadow-sm transition-all ${
-                    errors.username
+                    errors.email
                       ? "border-red-500"
-                      : username
+                      : email
                       ? "border-green-500"
                       : "border-gray-200"
                   }`}
                 >
                   <User
                     className={`h-6 w-6 ${
-                      errors.username
-                        ? "text-red-500"
-                        : username
-                        ? "text-green-500"
-                        : "text-gray-400"
-                    }`}
+                        errors.email
+                          ? "text-red-500"
+                          : email
+                          ? "text-green-500"
+                          : "text-gray-400"
+                      }`}
                   />
                   <input
                     className="w-full p-2 outline-none bg-transparent text-gray-700 placeholder-gray-400 text-lg"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Username"
-                    type="text"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
+                      }}
+                      placeholder="Email (example@gmail.com)"
+                      type="email"
                   />
-                  {username && (
+                    {email && (
                     <div className="flex-shrink-0">
-                      {errors.username ? (
-                        <AlertTriangle className="h-5 w-5 text-red-500" />
-                      ) : (
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                      )}
+                        {errors.email ? (
+                          <AlertTriangle className="h-5 w-5 text-red-500" />
+                        ) : (
+                          <CheckCircle className="h-5 w-5 text-green-500" />
+                        )}
                     </div>
                   )}
                 </div>
-                {errors.username && (
-                  <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
-                    <AlertTriangle className="h-4 w-4" />
-                    {errors.username}
-                  </p>
-                )}
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                      <AlertTriangle className="h-4 w-4" />
+                      {errors.email}
+                    </p>
+                  )}
               </div>
 
               {/* Password Field */}
@@ -133,8 +157,11 @@ export default function Form() {
                   <input
                     className="w-full p-2 outline-none bg-transparent text-gray-700 placeholder-gray-400 text-lg"
                     type={showPassword ? "text" : "password"}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                      value={password}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                        if (errors.password) setErrors((prev) => ({ ...prev, password: undefined }));
+                      }}
                     placeholder="Password"
                   />
                   <button
@@ -169,7 +196,10 @@ export default function Form() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-4 px-6 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg transition-all text-lg"
+                className="w-full py-4 px-6 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg transition-all text-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={
+                  !email || !password || !!errors.email || !!errors.password
+                }
               >
                 Login
               </button>

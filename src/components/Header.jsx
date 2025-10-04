@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Image from "next/image";
+import { label, li } from "framer-motion/client";
 export default function Header() {
   const [open, setOpen] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -10,48 +11,56 @@ export default function Header() {
 
   const menu = [
     { label: "Home", link: "/" },
+    // {
+    //   label: "Solution",
+    //   dropdown: [
+    //     { label: "ESS Official", link: "https://escan-systems.com/our-services/" },
+    //     { label: "ESS Green Bot" },
+    //     { label: "ESS Farming Link" },
+    //   ],
+    // },
     {
-      label: "Solution",
+      label: "Pre-Season",
       dropdown: [
-        { label: "ESS Official", link: "https://escan-systems.com/our-services/" },
-        { label: "ESS Green Bot" },
-        { label: "ESS Farming Link" },
-      ],
-    },
-    {
-      label: "Land Preparing & Crop Planning",
-      dropdown: [
-        { label: "Farm Mapping (GIS)" },
+        // { label: "Farm Mapping (GIS)" },
         { label: "Soil Management", link: "/soilManagement" },
       ],
     },
     {
-      label: "Crop Operations",
+      label: "In-Season",
       dropdown: [
         { label: "Crop Sowing", link: "/cropSowing" },
-        "Irrigation Management",
-        "Weather Forecasting",
-        "Inventory Management",
-        "Labor Management"
+        {label:"Irrigation Management", link:"/irrigationManagement"},
+        {label:"Weather Forecasting", link:"/weatherForecasting"},
+        {label:"Inventory Management", link:"/inventaryManagement"},
+        {label:"Labor Management", link:"/laborManagement"},
       ],
     },
     {
-      label: "Post Harvest",
+      label: "Harvest",
       dropdown: ["Farm Shipping", "Packaging", "Warehouse Management"],
     },
     {
-      label: "Farm Ai & Cms",
-      dropdown: ["Farm Insights", "Contract Farming","Farm.Ai","Settings","Notifications"],
+      label: "Post-Harvest",
+      dropdown: [
+        "Farm Insights",
+        "Contract Farming",
+        "Farm.Ai",
+        "Settings",
+        "Notifications",
+      ],
     },
   ];
 
   return (
     <header className="bg-[#f7f7f7] sticky top-0 z-50 shadow">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 py-3">
-        <img
-          src="/logo.jpg"
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 py-1">
+        <Image
+          src="/logo2.jpg"
           alt="Logo"
-          className="h-10 w-auto object-contain"
+          width={220} // you must provide width
+          height={20} // and height
+          className="object-contain"
         />
         <nav className="hidden md:flex gap-8">
           {menu.map((item, idx) => (
@@ -83,19 +92,19 @@ export default function Header() {
                             {option}
                           </a>
                         ))} */}
-                         {item.dropdown.map((option, i) => (
-                       <a
-                         key={option.label || option}
-                         href={option.link || "#"}
-                         className={`block px-4 py-2 text-xs text-gray-800 hover:text-green-700 hover:underline cursor-pointer ${
-                           i !== item.dropdown.length - 1 ? "border-b" : ""
-                         }`}
-                         tabIndex={0}
-                         // open in same tab, so no target or rel
-                       >
-                         {option.label || option}
-                       </a>
-                     ))}
+                        {item.dropdown.map((option, i) => (
+                          <a
+                            key={option.label || option}
+                            href={option.link || "#"}
+                            className={`block px-4 py-2 text-xs text-gray-800 hover:text-green-700 hover:underline cursor-pointer ${
+                              i !== item.dropdown.length - 1 ? "border-b" : ""
+                            }`}
+                            tabIndex={0}
+                            // open in same tab, so no target or rel
+                          >
+                            {option.label || option}
+                          </a>
+                        ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -165,7 +174,11 @@ export default function Header() {
                                 href={option.link || "#"}
                                 className="block py-1 text-sm text-gray-700 hover:text-green-700"
                                 target={option.link ? "_blank" : undefined}
-                                rel={option.link ? "noopener noreferrer" : undefined}
+                                rel={
+                                  option.link
+                                    ? "noopener noreferrer"
+                                    : undefined
+                                }
                               >
                                 {option.label || option}
                               </a>
