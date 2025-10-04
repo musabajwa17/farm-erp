@@ -7,9 +7,9 @@ const Login = () => {
   return (
     <>
         <HeaderContext />
-        <Header />
+        {/* <Header /> */}
         <Form />
-        <Footer />
+        {/* <Footer /> */}
     </>
 )}
 export default Login;

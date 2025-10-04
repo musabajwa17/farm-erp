@@ -29,3 +29,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
+
+
+:root {
+  --color: #557736;
+  --color1: #5577366f;
+  --lowopacitycolor: #5577362e;
+
+
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
